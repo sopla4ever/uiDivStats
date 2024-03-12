@@ -25,11 +25,16 @@ Love the script and want to support future development? Any and all donations gr
 You must be running firmware Merlin 384.15/384.13_4 or Fork 43E5 (or later) [Asuswrt-Merlin](https://asuswrt.lostrealm.ca/)
 
 ## Installation
-
+# Master branch:
 Using your preferred SSH client/terminal, copy and paste the following command, then press Enter:
 
 ```sh
-/usr/sbin/curl --retry 3 "https://raw.githubusercontent.com/jackyaz/uiDivStats/master/uiDivStats.sh" -o "/jffs/scripts/uiDivStats" && chmod 0755 /jffs/scripts/uiDivStats && /jffs/scripts/uiDivStats install
+/usr/sbin/curl --retry 3 "https://raw.githubusercontent.com/314eter/uiDivStats/master/uiDivStats.sh" -o "/jffs/scripts/uiDivStats" && chmod 0755 /jffs/scripts/uiDivStats && /jffs/scripts/uiDivStats install
+```
+# Develop branch:
+
+```sh
+/usr/sbin/curl --retry 3 "https://raw.githubusercontent.com/314eter/uiDivStats/develop/uiDivStats.sh" -o "/jffs/scripts/uiDivStats" && chmod 0755 /jffs/scripts/uiDivStats && /jffs/scripts/uiDivStats install
 ```
 
 ## Usage
