@@ -3,9 +3,9 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/240224b6b96543a782f176f2435ffa03)](https://www.codacy.com/app/jackyaz/uiDivStats?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jackyaz/uiDivStats&amp;utm_campaign=Badge_Grade)
 ![Shellcheck](https://github.com/jackyaz/uiDivStats/actions/workflows/shellcheck.yml/badge.svg)
 
-## v3.1.0
+## v3.1.0_24.03.12
 
-### Updated on 2023-11-26
+### Updated on 2024-03-12
 
 ## About
 
