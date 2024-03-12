@@ -9,7 +9,8 @@
 ##   | |_| || || |__| || | \ V /  ____) || |_| (_| || |_ \__ \   ##
 ##    \__,_||_||_____/ |_|  \_/  |_____/  \__|\__,_| \__||___/   ##
 ##                                                               ##
-##             https://github.com/jackyaz/uiDivStats             ##
+##             Created by jackyaz, continued by 314eter        	 ##
+##             https://github.com/314eter/uiDivStats             ##
 ##                                                               ##
 ###################################################################
 
@@ -26,16 +27,16 @@
 
 ### Start of script variables ###
 readonly SCRIPT_NAME="uiDivStats"
-readonly SCRIPT_VERSION="v3.1.0"
+readonly SCRIPT_VERSION="v3.1.0_24.03.12"
 SCRIPT_BRANCH="develop"
-SCRIPT_REPO="https://raw.githubusercontent.com/jackyaz/$SCRIPT_NAME/$SCRIPT_BRANCH"
+SCRIPT_REPO="https://raw.githubusercontent.com/314eter/$SCRIPT_NAME/$SCRIPT_BRANCH"
 readonly SCRIPT_DIR="/jffs/addons/$SCRIPT_NAME.d"
 readonly SCRIPT_CONF="$SCRIPT_DIR/config"
 readonly SCRIPT_USB_DIR="/opt/share/uiDivStats.d"
 readonly SCRIPT_WEBPAGE_DIR="$(readlink /www/user)"
 readonly SCRIPT_WEB_DIR="$SCRIPT_WEBPAGE_DIR/$SCRIPT_NAME"
 readonly SHARED_DIR="/jffs/addons/shared-jy"
-readonly SHARED_REPO="https://raw.githubusercontent.com/jackyaz/shared-jy/master"
+readonly SHARED_REPO="https://raw.githubusercontent.com/314eter/shared-jy/master"
 readonly SHARED_WEB_DIR="$SCRIPT_WEBPAGE_DIR/shared-jy"
 readonly DNS_DB="$SCRIPT_USB_DIR/dnsqueries.db"
 readonly CSV_OUTPUT_DIR="$SCRIPT_USB_DIR/csv"
@@ -164,7 +165,7 @@ Update_Check(){
 	echo 'var updatestatus = "InProgress";' > "$SCRIPT_WEB_DIR/detect_update.js"
 	doupdate="false"
 	localver=$(grep "SCRIPT_VERSION=" "/jffs/scripts/$SCRIPT_NAME" | grep -m1 -oE 'v[0-9]{1,2}([.][0-9]{1,2})([.][0-9]{1,2})')
-	/usr/sbin/curl -fsL --retry 3 "$SCRIPT_REPO/$SCRIPT_NAME.sh" | grep -qF "jackyaz" || { Print_Output true "404 error detected - stopping update" "$ERR"; return 1; }
+	/usr/sbin/curl -fsL --retry 3 "$SCRIPT_REPO/$SCRIPT_NAME.sh" | grep -qF "314eter" || { Print_Output true "404 error detected - stopping update" "$ERR"; return 1; }
 	serverver=$(/usr/sbin/curl -fsL --retry 3 "$SCRIPT_REPO/$SCRIPT_NAME.sh" | grep "SCRIPT_VERSION=" | grep -m1 -oE 'v[0-9]{1,2}([.][0-9]{1,2})([.][0-9]{1,2})')
 	if [ "$localver" != "$serverver" ]; then
 		doupdate="version"
@@ -1561,7 +1562,8 @@ ScriptHeader(){
 	printf "${BOLD}##                                                               ##${CLEARFORMAT}\\n"
 	printf "${BOLD}##                       %s on %-11s                   ##${CLEARFORMAT}\\n" "$SCRIPT_VERSION" "$ROUTER_MODEL"
 	printf "${BOLD}##                                                               ##${CLEARFORMAT}\\n"
-	printf "${BOLD}##              https://github.com/jackyaz/uiDivStats            ##${CLEARFORMAT}\\n"
+	printf "${BOLD}##              Created by jackyaz, continued by 314eter         ##${CLEARFORMAT}\\n"
+  	printf "${BOLD}##              https://github.com/314eter/uiDivStats            ##${CLEARFORMAT}\\n"
 	printf "${BOLD}##                                                               ##${CLEARFORMAT}\\n"
 	printf "${BOLD}###################################################################${CLEARFORMAT}\\n"
 	printf "\\n"
@@ -1760,7 +1762,7 @@ Check_Requirements(){
 
 Menu_Install(){
 	ScriptHeader
-	Print_Output true "Welcome to $SCRIPT_NAME $SCRIPT_VERSION, a script by JackYaz"
+	Print_Output true "Welcome to $SCRIPT_NAME $SCRIPT_VERSION, a script by JackYaz & 314eter"
 	sleep 1
 
 	Print_Output false "Checking your router meets the requirements for $SCRIPT_NAME"
@@ -2104,7 +2106,7 @@ License
 Help & Support
   https://www.snbforums.com/forums/asuswrt-merlin-addons.60/?prefix_id=15
 Source code
-  https://github.com/jackyaz/$SCRIPT_NAME
+  https://github.com/314eter/$SCRIPT_NAME
 EOF
 	printf "\\n"
 }
@@ -2277,13 +2279,13 @@ case "$1" in
 	;;
 	develop)
 		SCRIPT_BRANCH="develop"
-		SCRIPT_REPO="https://raw.githubusercontent.com/jackyaz/$SCRIPT_NAME/$SCRIPT_BRANCH"
+		SCRIPT_REPO="https://raw.githubusercontent.com/314eter/$SCRIPT_NAME/$SCRIPT_BRANCH"
 		Update_Version force
 		exit 0
 	;;
 	stable)
 		SCRIPT_BRANCH="master"
-		SCRIPT_REPO="https://raw.githubusercontent.com/jackyaz/$SCRIPT_NAME/$SCRIPT_BRANCH"
+		SCRIPT_REPO="https://raw.githubusercontent.com/314eter/$SCRIPT_NAME/$SCRIPT_BRANCH"
 		Update_Version force
 		exit 0
 	;;
